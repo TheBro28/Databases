@@ -3,7 +3,7 @@ import sqlite3
 from tabulate import tabulate
 
 # This is the filename of the database to be used
-DB_NAME = 'FAST_CARS.db'
+DB_NAME = 'Music_Lessons.db'
 
 def print_query(view_name:str):
     ''' Prints the specified view from the database in a table '''
@@ -22,3 +22,26 @@ def print_query(view_name:str):
     print(tabulate(results,headings))
     db.close()
 
+menu_choice =""
+while menu_choice != 'Z':
+    menu_choice = input('Welcome to the music lesson database\n\n'
+                        'Type the letter for the information you want to see:\n'
+                        'A - Children with lessons on Mondays\n'
+                        'B - Children with lessons on Wednesdays\n'
+                        'C - Parents who owe money\n'
+                        'D - Parent and child personal information\n'
+                        'Z - Exit\n\n'
+                        'Type option here: ')
+    menu_choice = menu_choice.upper()
+    if menu_choice == 'A':
+        print_query("Children with lessons on Mondays")
+    elif menu_choice == 'B':
+        print_query("Children with lessons on Wednesdays")
+    elif menu_choice == 'C':
+        print_query("Parents who owe money")
+    elif menu_choice == 'D':
+        print_query("Personal parent and child information")
+    elif menu_choice == 'Z':
+        print('Goodbye')
+    else:
+        print('Invalid choice, please try again')
