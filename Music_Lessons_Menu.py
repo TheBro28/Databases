@@ -41,6 +41,8 @@ while menu_choice != 'Z':
         print_query("Parents who owe money")
     elif menu_choice == 'D':
         print_query("Personal parent and child information")
+    elif menu_choice == 'E':
+        print_query("All male students on a Monday, Wednesday, Friday")
     elif menu_choice == 'Z':
         print('Goodbye')
     else:
